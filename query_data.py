@@ -39,4 +39,8 @@ def query_data(user_id, query_id, value_type,scene_id=None,time_range=None,ip='l
 	return eval(parse_dict[query_id])(jres)
 if __name__=='__main__':
 	#print query_data(user_id=1,query_id=1,value_type='test',scene_id=(0,1),time_range=(14959500600000000000,1495950070000000000))
-	print query_data(user_id=1,query_id=3,value_type='test',scene_id=(0,1),time_range=(0,1495950070000000000))
+	data = query_data(user_id=1,query_id=3,value_type='test',scene_id=(0,1),time_range=(0,1495950070000000000))
+	a=map(lambda x:x[0],data)
+	b=map(lambda x:x[1],data)
+	from plt_seq import *
+	draw(a,b,'lalala')
